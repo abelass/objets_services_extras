@@ -26,7 +26,6 @@ function formulaires_configurer_objets_services_extras_saisies_dist() {
 						'defaut' => $config['objets']
 					)
 				),
-
 			)
 		),
 	);
