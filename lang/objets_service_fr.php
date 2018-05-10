@@ -12,8 +12,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'ajouter_lien_objets_service' => 'Ajouter ce service',
 
 	// C
-	'champ_descriptif_label' => 'Descriptif',
-	'champ_titre_label' => 'Titre',
 	'confirmer_supprimer_objets_service' => 'Confirmez-vous la suppression de cet service ?',
 
 	// I
@@ -21,12 +19,12 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'icone_modifier_objets_service' => 'Modifier ce service',
 	'info_1_objets_service' => 'Un service',
 	'info_aucun_objets_service' => 'Aucun service',
-	'info_nb_objets_services_services' => '@nb@ services',
-	'info_objets_services_services_auteur' => 'Les services de cet auteur',
+	'info_nb_objets_services' => '@nb@ services',
+	'info_objets_services_auteur' => 'Les services de cet auteur',
 
 	// R
 	'retirer_lien_objets_service' => 'Retirer ce service',
-	'retirer_tous_liens_objets_services_services' => 'Retirer tous les services',
+	'retirer_tous_liens_objets_services' => 'Retirer tous les services',
 
 	// S
 	'supprimer_objets_service' => 'Supprimer cet service',
@@ -40,6 +38,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_logo_objets_service' => 'Logo de ce service',
 	'titre_objets_lies_objets_service' => 'Liés à ce service',
 	'titre_objets_service' => 'Service',
-	'titre_objets_services_services' => 'Services',
-	'titre_objets_services_services_rubrique' => 'Services de la rubrique',
+	'titre_objets_services' => 'Services',
+	'titre_objets_services_rubrique' => 'Services de la rubrique',
 );

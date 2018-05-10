@@ -8,6 +8,13 @@
 		<input type="hidden" name="id_objets_service" value="#ENV{id_objets_service}" />
 		<div class="editer-groupe">
 
+			[(#SAISIE{input, titre, obligatoire=oui,
+				label=<:ecrire:info_titre:>})]
+
+			[(#SAISIE{textarea, descriptif,
+				label=<:ecrire:info_descriptif:>,
+				conteneur_class=pleine_largeur, class=inserer_barre_edition, rows=4})]
+
 		</div>
 		[(#REM) ajouter les saisies supplementaires : extra et autre, a cet endroit ]
 		<!--extra-->
