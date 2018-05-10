@@ -1,0 +1,55 @@
+<paquet
+	prefix="objets_services_extras"
+	categorie="divers"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.0;3.2.*]"
+	logo="prive/themes/spip/images/objets_services_extras-64.png"
+	documentation="https://github.com/abelass/objets_services_extras"
+	schema="1.0.0" 
+>
+	<!--
+		Paquet généré le 2018-05-10 08:10:59
+		(Vous pouvez bien entendu supprimer ces commentaires) 
+	-->
+
+	<nom>Services extras pour objets</nom>
+	<!-- Des services extras pour vos objets -->
+
+	<!-- cette balise peut être présente plusieurs fois s'il y a plusieurs auteurs --> 
+	<auteur lien='https://websimple.be'>Rainer Müller</auteur>
+
+	<licence>GNU/GPL</licence>
+
+	<!--
+		Exemple de commandes
+		* dependances
+		<necessite nom="saisies" compatibilite="[2.4.0;]" />
+		<utilise nom="saisies" compatibilite="[2.4.0;]" />
+		<lib nom="simplehtmldom" lien="http://chemin_vers_archive.zip" />
+		* pipelines
+		<pipeline nom="autoriser" inclure="objets_services_extras_autorisations.php" />
+		<pipeline nom="insert_head" inclure="objets_services_extras_pipelines.php" />
+		* declarer un pipeline 
+		<pipeline nom="mon_pipeline" action="" />
+		* parents de menus de SPIP :
+				menu_accueil (à éviter), menu_edition, menu_publication,
+				menu_activite, menu_squelette, menu_administration, menu_configuration 
+		<menu nom="objets_services_extras" titre="objets_services_extras:objets_services_extras_titre" parent="menu_edition"  icone="images/objets_services_extras-16.png" />
+		* parents d'onglets... configuration, plugins, statistiques, ... 
+		<onglet nom="objets_services_extras" titre="objets_services_extras:objets_services_extras_titre" parent="configuration" icone="images/objets_services_extras-24.png" />
+	-->
+
+	<necessite nom="saisies" compatibilite="[2.4.0;]" /> 
+
+
+	<pipeline nom="autoriser" inclure="objets_services_extras_autorisations.php" /> 
+
+	<pipeline nom="declarer_tables_objets_sql" inclure="base/objets_services_extras.php" /> 
+	<pipeline nom="declarer_tables_interfaces" inclure="base/objets_services_extras.php" /> 
+	<pipeline nom="declarer_tables_auxiliaires" inclure="base/objets_services_extras.php" /> 
+	<pipeline nom="affiche_milieu" inclure="objets_services_extras_pipelines.php" /> 
+	<pipeline nom="optimiser_base_disparus" inclure="objets_services_extras_pipelines.php" /> 
+
+	<menu nom="objets_services" titre="objets_service:titre_objets_services" parent="menu_edition" icone="images/objets_service-16.png" action="objets_services" /> 
+</paquet>
