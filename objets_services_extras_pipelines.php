@@ -31,13 +31,13 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * @return array       Données du pipeline
  */
 function objets_services_extras_affiche_milieu($flux) {
+	include_spip('inc/config');
 	$texte = '';
 	$e = trouver_objet_exec($flux['args']['exec']);
+	$objets_cibles = lire_config('objets_infos_extras/objets', array());
 
-
-
-	// objets_services sur les immeubles
-	if (!$e['edition'] and in_array($e['type'], array('immeuble'))) {
+	// objets_services sur les objets choisis
+	if (!$e['edition'] and in_array($e['table_objet_sql'], $objets_cibles)) {
 		$texte .= recuperer_fond('prive/objets/editer/liens', array(
 			'table_source' => 'objets_services',
 			'objet' => $e['type'],
