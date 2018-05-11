@@ -45,7 +45,7 @@ function objets_services_extras_declarer_tables_objets_sql($tables) {
 	$tables['spip_objets_services'] = array(
 		'type' => 'objets_service',
 		'principale' => 'oui',
-		'table_objet_surnoms' => array('objetsservice'), // table_objet('objets_service') => 'objets_services' 
+		'table_objet_surnoms' => array('objetsservice'), // table_objet('objets_service') => 'objets_services'
 		'field'=> array(
 			'id_objets_service'  => 'bigint(21) NOT NULL',
 			'titre'              => 'varchar(255) NOT NULL DEFAULT ""',
@@ -60,9 +60,9 @@ function objets_services_extras_declarer_tables_objets_sql($tables) {
 		),
 		'titre' => 'titre AS titre, "" AS lang',
 		'date' => 'date',
-		'champs_editables'  => array(),
-		'champs_versionnes' => array(),
-		'rechercher_champs' => array(),
+		'champs_editables'  => array('titre', 'descriptif'),
+		'champs_versionnes' => array('titre', 'descriptif'),
+		'rechercher_champs' => array("titre" => 8, "descriptif" => 5),
 		'tables_jointures'  => array('spip_objets_services_liens'),
 		'statut_textes_instituer' => array(
 			'prepa'    => 'texte_statut_en_cours_redaction',
