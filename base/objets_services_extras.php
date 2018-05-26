@@ -106,6 +106,7 @@ function objets_services_extras_declarer_tables_auxiliaires($tables) {
 			'id_objet'           => 'bigint(21) DEFAULT "0" NOT NULL',
 			'objet'              => 'VARCHAR(25) DEFAULT "" NOT NULL',
 			'vu'                 => 'VARCHAR(6) DEFAULT "non" NOT NULL',
+			'rang_lien'          => 'int(4) NOT NULL DEFAULT "0"',
 		),
 		'key' => array(
 			'PRIMARY KEY'        => 'id_objets_service,id_objet,objet',

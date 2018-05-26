@@ -12,7 +12,7 @@ a mis a jour la valeur avec la page reelle]
 #SET{debut,#ENV{debutobjl,#EVAL{_request("debutobjl");}}}
 #SET{afficher_lettres,#TRI|=={'multi titre'}|oui}
 #ANCRE_PAGINATION
-<div class="liste-objets liste-objets-lies objets_services">
+<div class="liste_items documents liste-objets liste-objets-lies objets_services ordonner_rang_lien">
 <table class="spip liste">
 [<caption><strong class="caption">(#ENV*{titre,#GRAND_TOTAL|singulier_ou_pluriel{objets_service:info_1_objets_service,objets_service:info_nb_objets_services}})</strong></caption>]
 	<thead>
@@ -39,7 +39,7 @@ a mis a jour la valeur avec la page reelle]
 	</thead>
 	<tbody>
 	<BOUCLE_liste_objets_services(OBJETS_SERVICES){id_objets_service IN #GET{selection}}{statut?}
-		{tri #ENV{par,multi titre},#GET{defaut_tri}}{pagination #ENV{nb,10} objl}>
+		{tri #ENV{par,rang_lien, multi titre},#GET{defaut_tri}}{pagination #ENV{nb,10} objl}>
 		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})][ (#EXPOSE|unique)][ (#TITRE**|extraire_multi|initiale|=={#ENV{i}}|?{on}|unique)][(#ID_OBJETS_SERVICE|=={#ENV{id_lien_ajoute}}|oui)append]">
 			<td class="statut">[(#STATUT|puce_statut{objets_service})]</td>
 			<td class="titre">[(#LOGO_OBJETS_SERVICE|image_reduire{20,20})]<a href="[(#ID_OBJETS_SERVICE|generer_url_entite{objets_service})]">#TITRE</a></td>
@@ -61,3 +61,9 @@ a mis a jour la valeur avec la page reelle]
 	<strong class="caption">[(#ENV*{titre,<:objets_service:info_aucun_objets_service:>})]</strong>
 </div>
 <//B_liste_objets_services>
+
+<script type="text/javascript">/*<![CDATA[*/
+/* Gestion des différents modes d'affichages, du tri des documents, et des rechargements ajax */
+[(#INCLURE{fond=javascript/gestion_listes_documents.js}|compacte{js})]
+/*]]>*/</script>
+</div>
