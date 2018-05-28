@@ -6,7 +6,7 @@
 	compatibilite="[3.0.0;3.2.*]"
 	logo="prive/themes/spip/images/objets_services_extras-64.png"
 	documentation="https://github.com/abelass/objets_services_extras"
-	schema="1.0.0"
+	schema="1.0.1"
 >
 	<!--
 		Paquet généré le 2018-05-10 08:10:59

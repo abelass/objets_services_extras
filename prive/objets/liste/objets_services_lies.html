@@ -17,8 +17,8 @@ a mis a jour la valeur avec la page reelle]
 [<caption><strong class="caption">(#ENV*{titre,#GRAND_TOTAL|singulier_ou_pluriel{objets_service:info_1_objets_service,objets_service:info_nb_objets_services}})</strong></caption>]
 	<thead>
 		#SET{p,''}
-		<BOUCLE_lettre(OBJETS_SERVICES){tout}{id_objets_service IN #GET{selection}}{where?}{statut?}
-			{tri #ENV{par,multi titre},#GET{defaut_tri}}{id_objets_service==#GET{afficher_lettres}|?{'.*','A'}}>[
+		<BOUCLE_lettre(OBJETS_SERVICES objets_services_liens){objet?}{tout}{id_objets_service IN #GET{selection}}{where?}{statut?}
+			{tri #ENV{par, L1.rang_lien, multi titre},#GET{defaut_tri}}{id_objets_service==#GET{afficher_lettres}|?{'.*','A'}}>[
 		(#TITRE**|extraire_multi|initiale|unique|oui)
 		[(#SET{p,#GET{p}|concat{
 		#SELF|parametre_url{debutobjl,@#ID_OBJETS_SERVICE}|ancre_url{paginationobjl}|afficher_initiale{#TITRE**|extraire_multi|initiale{},#COMPTEUR_BOUCLE,#GET{debut},#ENV{nb,10}}
@@ -38,8 +38,8 @@ a mis a jour la valeur avec la page reelle]
 		</tr>
 	</thead>
 	<tbody>
-	<BOUCLE_liste_objets_services(OBJETS_SERVICES){id_objets_service IN #GET{selection}}{statut?}
-		{tri #ENV{par,rang_lien, multi titre},#GET{defaut_tri}}{pagination #ENV{nb,10} objl}>
+	<BOUCLE_liste_objets_services(OBJETS_SERVICES objets_services_liens){id_objets_service IN #GET{selection}}{statut?}
+		{tri #ENV{par, L1.rang_lien, multi titre},#GET{defaut_tri}}{pagination #ENV{nb,10} objl}>
 		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})][ (#EXPOSE|unique)][ (#TITRE**|extraire_multi|initiale|=={#ENV{i}}|?{on}|unique)][(#ID_OBJETS_SERVICE|=={#ENV{id_lien_ajoute}}|oui)append]">
 			<td class="statut">[(#STATUT|puce_statut{objets_service})]</td>
 			<td class="titre">[(#LOGO_OBJETS_SERVICE|image_reduire{20,20})]<a href="[(#ID_OBJETS_SERVICE|generer_url_entite{objets_service})]">#TITRE</a></td>
